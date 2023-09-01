@@ -1,0 +1,20 @@
+[
+    {
+        "label": "playTetris",
+        "kind": 2,
+        "importPath": "tetris",
+        "description": "tetris",
+        "peekOfCode": "def playTetris():\n    # Definimos una matriz 10x10\n    screen = [  [\"⬛\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n                [\"⬛\", \"⬛\", \"⬛\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n                [\"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n                [\"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n                [\"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n                [\"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n                [\"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n                [\"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],",
+        "detail": "tetris",
+        "documentation": {}
+    },
+    {
+        "label": "print_screen",
+        "kind": 2,
+        "importPath": "tetris",
+        "description": "tetris",
+        "peekOfCode": "def print_screen(screen: list):\n    try:\n        for row in screen:\n            print(\"\".join(map(str, row)))\n    except UnicodeEncodeError as e:\n        # Handle the exception\n        print(e)\nplayTetris()",
+        "detail": "tetris",
+        "documentation": {}
+    }
+]
