@@ -1,10 +1,45 @@
 [
     {
-        "label": "playTetris",
+        "label": "Enum",
+        "importPath": "enum",
+        "description": "enum",
+        "isExtraImport": true,
+        "detail": "enum",
+        "documentation": {}
+    },
+    {
+        "label": "keyword",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "keyword",
+        "description": "keyword",
+        "detail": "keyword",
+        "documentation": {}
+    },
+    {
+        "label": "Movement",
+        "kind": 6,
+        "importPath": "tetris",
+        "description": "tetris",
+        "peekOfCode": "class Movement(Enum):\n    DOWN = 1\n    RIGHT = 2\n    LEFT = 3\n    ROTATE = 4\ndef play_tetris():\n    # Definimos una matriz 10x10\n    screen = [  [\"⬛\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n                [\"⬛\", \"⬛\", \"⬛\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n                [\"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],",
+        "detail": "tetris",
+        "documentation": {}
+    },
+    {
+        "label": "play_tetris",
         "kind": 2,
         "importPath": "tetris",
         "description": "tetris",
-        "peekOfCode": "def playTetris():\n    # Definimos una matriz 10x10\n    screen = [  [\"⬛\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n                [\"⬛\", \"⬛\", \"⬛\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n                [\"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n                [\"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n                [\"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n                [\"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n                [\"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n                [\"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],",
+        "peekOfCode": "def play_tetris():\n    # Definimos una matriz 10x10\n    screen = [  [\"⬛\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n                [\"⬛\", \"⬛\", \"⬛\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n                [\"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n                [\"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n                [\"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n                [\"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n                [\"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n                [\"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],",
+        "detail": "tetris",
+        "documentation": {}
+    },
+    {
+        "label": "move_piece",
+        "kind": 2,
+        "importPath": "tetris",
+        "description": "tetris",
+        "peekOfCode": "def move_piece(move: Movement, screen: list, rotation: int) -> (list, int):\n    canvas_screen = [[\"⬜\"]*10 for _ in range(10)]\n    new_rotation = rotation\n    if move is Movement.ROTATE:\n        new_rotation = 0 if rotation == 3 else rotation + 1\n    rotation_item = 0\n    rotations = [\n        [( 1, 1), ( 0, 0), ( -2, 0), ( -1, -1)],\n        [( 0, 1), (-1, 0), ( 0, -1), ( 1, -2)],\n        [( 0, 2), ( 1, 1), ( -1, 1), ( -2, 0)],",
         "detail": "tetris",
         "documentation": {}
     },
@@ -13,7 +48,7 @@
         "kind": 2,
         "importPath": "tetris",
         "description": "tetris",
-        "peekOfCode": "def print_screen(screen: list):\n    try:\n        for row in screen:\n            print(\"\".join(map(str, row)))\n    except UnicodeEncodeError as e:\n        # Handle the exception\n        print(e)\nplayTetris()",
+        "peekOfCode": "def print_screen(screen: list):\n    print(\"\\n ----Tetris---- \\n\")\n    try:\n        for row in screen:\n            print(\"\".join(map(str, row)))\n    except UnicodeEncodeError as e:\n        # Handle the exception\n        print(e)\nplay_tetris()",
         "detail": "tetris",
         "documentation": {}
     }
